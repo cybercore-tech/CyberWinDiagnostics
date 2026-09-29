@@ -135,6 +135,21 @@ $('.main-nav').addEventListener('click', (event) => {
   }
 });
 
+$('#copyInstall').addEventListener('click', async () => {
+  const command = $('#installCommand');
+  try {
+    await navigator.clipboard.writeText(command.textContent.trim());
+    $('#copyStatus').textContent = 'COMMAND COPIED';
+  } catch {
+    const selection = window.getSelection();
+    const range = document.createRange();
+    range.selectNodeContents(command);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    $('#copyStatus').textContent = 'SELECTED — PRESS CTRL/CMD+C';
+  }
+});
+
 fetch(new URL('data/themes.json', document.currentScript.src))
   .then((response) => {
     if (!response.ok) throw new Error(`Theme registry unavailable (${response.status})`);

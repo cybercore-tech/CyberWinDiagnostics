@@ -74,6 +74,7 @@ source_html = (SITE / "index.html").read_text(encoding="utf-8")
 legacy_html = source_html.replace('href="assets/', 'href="docs/assets/')
 legacy_html = legacy_html.replace('src="assets/', 'src="docs/assets/')
 legacy_html = legacy_html.replace('href="styles.css"', 'href="docs/styles.css"')
+legacy_html = legacy_html.replace('href="install.css"', 'href="docs/install.css"')
 legacy_html = legacy_html.replace('src="app.js"', 'src="docs/app.js"')
 if (ROOT / "index.html").read_text(encoding="utf-8") != legacy_html:
     fail("root Pages compatibility index is stale; regenerate it from docs/index.html")

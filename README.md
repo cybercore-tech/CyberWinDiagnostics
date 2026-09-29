@@ -30,6 +30,7 @@ bundle.
 ## Contents
 
 - [0. Ground rules](#0-ground-rules)
+- [Install from a shell](#install-from-a-shell)
 - [1. Building the stick](#1-building-the-stick)
 - [2. Toolkit manifest](#2-toolkit-manifest)
 - [3. Phase 0 — Intake](#3-phase-0--intake)
@@ -89,6 +90,32 @@ Get-ChildItem E:\CyberWinDiagnostics -Recurse | Unblock-File
 ```
 
 Never set `Set-ExecutionPolicy Unrestricted` machine-wide on a client box.
+
+## Install from a shell
+
+On Linux or macOS, run the installer from the mounted USB directory to create
+`./CyberWinDiagnostics`, or pass `--dest` with the target folder. This prepares
+the Windows toolkit files on the drive; the PowerShell collector itself runs
+on Windows. No `sudo` is used.
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/cybercore-tech/CyberWinDiagnostics/main/install.sh | sh -s --
+```
+
+Choose a destination explicitly:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/cybercore-tech/CyberWinDiagnostics/main/install.sh | sh -s -- --dest "/path/to/mounted/USB/CyberWinDiagnostics"
+```
+
+The installer needs `curl`, `unzip`, and `sha256sum` (Linux) or `shasum`
+(macOS). It verifies the downloaded source ZIP against the repository's
+published SHA-256 file and refuses a non-empty destination by default. For an
+existing CyberWinDiagnostics folder, `--update` overlays project files while
+preserving reports and unrelated files; it does not remove obsolete files.
+The shareable ZIP contains no optional third-party utility binaries. Review
+[`install.sh`](install.sh) before running the one-line bootstrap if you want
+to inspect what the shell command executes.
 
 ---
 

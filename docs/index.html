@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="install.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,6 +42,11 @@
           <h1>See the whole<br>picture. <em>Find<br>the cause.</em></h1>
           <p class="hero-lede">A careful Windows diagnostic runbook and PowerShell collector, built for the moments when a machine is slow, printing is stuck, or the evidence just doesn’t add up.</p>
           <div class="hero-actions"><a class="button button-primary" href="https://github.com/cybercore-tech/CyberWinDiagnostics/archive/refs/heads/main.zip">Get source ZIP <span>↓</span></a><a class="button button-secondary" href="#screens">See the field screens <span>⌄</span></a></div>
+          <div class="quick-install" id="install">
+            <div class="quick-install-head"><span><i></i> QUICK INSTALL / LINUX + macOS</span><a href="https://github.com/cybercore-tech/CyberWinDiagnostics/blob/main/install.sh" target="_blank" rel="noreferrer">INSPECT SCRIPT ↗</a></div>
+            <div class="install-command"><code id="installCommand">curl -fsSL https://raw.githubusercontent.com/cybercore-tech/CyberWinDiagnostics/main/install.sh | sh -s --</code><button id="copyInstall" type="button" aria-label="Copy shell install command">COPY</button></div>
+            <div class="quick-install-foot"><span>Run from the mounted USB directory · creates ./CyberWinDiagnostics · no sudo</span><span id="copyStatus" aria-live="polite">HTTPS / SHA-256 CHECK</span></div>
+          </div>
           <div class="hero-proof"><span>01 <b>COLLECT</b></span><span>02 <b>REVIEW</b></span><span>03 <b>DECIDE</b></span></div>
         </div>
         <div class="terminal-wrap">

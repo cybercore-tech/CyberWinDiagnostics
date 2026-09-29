@@ -10,6 +10,19 @@ on:
 permissions: {}
 
 jobs:
+  portable-shell-installer:
+    name: POSIX shell installer and checksum tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Verify installer syntax and safety behavior
+        run: sh scripts/test_install.sh
+      - name: Verify source ZIP checksum
+        run: sha256sum -c CyberWinDiagnostics.zip.sha256
+
   windows-powershell:
     name: Windows PowerShell syntax and package checks
     runs-on: windows-latest
@@ -46,6 +59,7 @@ jobs:
           $ErrorActionPreference = 'Stop'
           $required = @(
             'LICENSE',
+            'install.sh',
             'CyberWinDiag.cmd',
             'Scripts/Invoke-CyberWinDiag.ps1',
             'Scripts/Fix-PrintSpooler.ps1',
