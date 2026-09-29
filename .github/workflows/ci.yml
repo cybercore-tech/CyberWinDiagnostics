@@ -76,6 +76,7 @@ jobs:
         shell: powershell
         run: |
           $ErrorActionPreference = 'Stop'
-          $binaries = Get-ChildItem -LiteralPath 'Tools' -Recurse -File -Include '*.exe','*.dll'
+          $binaries = Get-ChildItem -LiteralPath 'Tools' -Recurse -File |
+            Where-Object { $_.Extension -in @('.exe', '.dll') }
           if ($binaries) { throw "Third-party binaries must not be committed: $($binaries.FullName -join ', ')" }
           Write-Host 'PASS no third-party executable binaries in source checkout'
