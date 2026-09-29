@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  windows-powershell:
+    name: Windows PowerShell syntax and package checks
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Parse scripts with Windows PowerShell 5.1
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $scripts = Get-ChildItem -LiteralPath 'Scripts' -Filter '*.ps1' -File
+          if (-not $scripts) { throw 'No PowerShell scripts were found.' }
+          foreach ($scriptFile in $scripts) {
+            $tokens = $null
+            $parseErrors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile(
+              $scriptFile.FullName, [ref]$tokens, [ref]$parseErrors
+            ) | Out-Null
+            if ($parseErrors.Count -gt 0) {
+              $details = $parseErrors | ForEach-Object {
+                "{0}:{1}: {2}" -f $scriptFile.Name, $_.Extent.StartLineNumber, $_.Message
+              }
+              throw ($details -join [Environment]::NewLine)
+            }
+            Write-Host "PASS $($scriptFile.Name)"
+          }
+
+      - name: Verify launcher, required scripts, and source archive
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $required = @(
+            'CyberWinDiag.cmd',
+            'Scripts/Invoke-CyberWinDiag.ps1',
+            'Scripts/Fix-PrintSpooler.ps1',
+            'Scripts/Update-MicrosoftSafetyScanner.ps1',
+            'Scripts/Refresh-and-Run-MSERT.cmd',
+            'Tools/Bundle-INFO.md',
+            'Reports/README.txt'
+          )
+          foreach ($path in $required) {
+            if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { throw "Missing required file: $path" }
+          }
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $archive = [System.IO.Compression.ZipFile]::OpenRead([string](Resolve-Path 'CyberWinDiagnostics.zip'))
+          try {
+            $names = @($archive.Entries | ForEach-Object FullName)
+            foreach ($path in $required) {
+              $entryName = 'CyberWinDiagnostics/' + $path.Replace('\', '/')
+              if ($entryName -notin $names) { throw "ZIP is missing $entryName" }
+            }
+            if ($names | Where-Object { $_ -match '\.(exe|dll)$' }) {
+              throw 'Source ZIP must not include third-party executable binaries.'
+            }
+          } finally {
+            $archive.Dispose()
+          }
+
+      - name: Ensure ignored personal binaries are absent from the repository
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $binaries = Get-ChildItem -LiteralPath 'Tools' -Recurse -File -Include '*.exe','*.dll'
+          if ($binaries) { throw "Third-party binaries must not be committed: $($binaries.FullName -join ', ')" }
+          Write-Host 'PASS no third-party executable binaries in source checkout'

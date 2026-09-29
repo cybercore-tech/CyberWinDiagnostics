@@ -1,0 +1,17 @@
+# Personal USB-only third-party binaries. Never publish Sysinternals or MSERT.
+/Tools/Sysinternals/
+/Tools/Scanners/*.exe
+/Tools/Misc/NotepadPlusPlus/
+/Tools/Misc/7-Zip/
+/Tools/Storage/CrystalDiskInfo/
+
+# Engagement output can contain private system and user information.
+/Reports/**
+!/Reports/README.txt
+
+# Local/editor/OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
