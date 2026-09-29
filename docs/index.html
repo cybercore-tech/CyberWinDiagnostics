@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-theme="cyberpunk-neon">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070910">
+  <meta name="description" content="CyberWinDiagnostics — a portable Windows field toolkit for host inventory, performance, storage, event logs, networking, printing, and security posture.">
+  <title>CyberWinDiagnostics — Field diagnostics for Windows</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="CyberWinDiagnostics home"><span class="brand-mark"><b></b><b></b><b></b><b></b></span><span>CYBER<span class="brand-light">WIN</span><small>DIAGNOSTICS / FIELD KIT</small></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="#capabilities">Capabilities</a><a href="#screens">Field screens</a><a href="#workflow">Workflow</a></nav>
+    <div class="header-actions">
+      <div class="theme-picker">
+        <button class="theme-trigger" id="themeTrigger" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="theme-icon">◉</span><span id="themeCurrent">CYBERPUNK NEON</span><span class="chevron">⌄</span></button>
+        <section class="theme-menu" id="themeMenu" role="dialog" aria-label="Choose a Cybercore theme" hidden>
+          <div class="theme-menu-head"><div><small>CYBERCORE PALETTE</small><strong>Pick your field colors</strong></div><span class="theme-total">72 THEMES</span></div>
+          <label class="theme-search"><span>⌕</span><input id="themeSearch" type="search" placeholder="Find a theme…" autocomplete="off"><kbd>/</kbd></label>
+          <div class="theme-options" id="themeOptions"></div>
+          <div class="theme-menu-foot">Theme choice stays in this browser <span>ESC TO CLOSE</span></div>
+        </section>
+      </div>
+      <a class="github-link" href="https://github.com/cybercore-tech/CyberWinDiagnostics" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-wallpaper" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> PORTABLE WINDOWS FIELD TOOLKIT <i></i> WINDOWS 10 / 11</div>
+          <h1>See the whole<br>picture. <em>Find<br>the cause.</em></h1>
+          <p class="hero-lede">A careful Windows diagnostic runbook and PowerShell collector, built for the moments when a machine is slow, printing is stuck, or the evidence just doesn’t add up.</p>
+          <div class="hero-actions"><a class="button button-primary" href="https://github.com/cybercore-tech/CyberWinDiagnostics/archive/refs/heads/main.zip">Get source ZIP <span>↓</span></a><a class="button button-secondary" href="#screens">See the field screens <span>⌄</span></a></div>
+          <div class="hero-proof"><span>01 <b>COLLECT</b></span><span>02 <b>REVIEW</b></span><span>03 <b>DECIDE</b></span></div>
+        </div>
+        <div class="terminal-wrap">
+          <div class="window-frame terminal-frame">
+            <div class="window-titlebar"><div class="window-app-icon">›_</div><span>Administrator: Windows PowerShell</span><div class="window-controls"><i></i><i></i><i></i></div></div>
+            <div class="terminal-content">
+              <div class="terminal-overline"><span>CYBERWIN DIAGNOSTICS / STATIC PREVIEW</span><span class="terminal-live"><i></i> SAMPLE SESSION</span></div>
+              <div class="terminal-command"><span>PS E:\CyberWinDiagnostics&gt;</span><strong> .\CyberWinDiag.cmd</strong></div>
+              <div class="terminal-rule"></div>
+              <p class="terminal-label">ILLUSTRATIVE COLLECTION FLOW / READ-ONLY BY DEFAULT</p>
+              <div class="terminal-steps"><div><b>01</b><span>Host + OS inventory</span><i>COMPLETE</i></div><div><b>02</b><span>Performance + startup</span><i>COMPLETE</i></div><div><b>03</b><span>Storage + reliability</span><i>COLLECTING</i></div><div><b>04</b><span>Network + printing</span><i>QUEUED</i></div><div><b>05</b><span>Security posture</span><i>QUEUED</i></div></div>
+              <div class="terminal-progress"><span></span></div>
+              <div class="terminal-footer"><span>REPORT TARGET</span><code>E:\CyberWinDiagnostics\Reports\HOST-TIMESTAMP</code></div>
+            </div>
+          </div>
+          <div class="floating-stamp"><span class="stamp-mark">✳</span><span><b>NO INSTALLER</b><small>RUN FROM YOUR USB</small></span></div>
+          <div class="hero-coordinate">FIELD / 01<br>LOCAL FIRST<br>NO CLOUD UPLOAD</div>
+        </div>
+      </div>
+      <div class="hero-bottom"><span>CYBERCORE TECH / OPERATOR SYSTEMS</span><span class="scroll-cue">SCROLL TO EXPLORE <b>↓</b></span><span>STATIC SITE / CLIENT-SIDE THEMES</span></div>
+    </section>
+
+    <section class="signal-rail" aria-label="Toolkit scope"><div><span>WINDOWS BUILT-INS</span><i></i><span>POWERSHELL 5.1</span><i></i><span>USB-READY</span><i></i><span>REPORTS STAY LOCAL</span><i></i><span>NO THIRD-PARTY BINARIES IN SOURCE ZIP</span></div></section>
+
+    <section class="section capabilities" id="capabilities">
+      <div class="section-head"><div><p class="eyebrow">01 / WHAT IT SEES</p><h2>One pass through<br>the <em>whole machine.</em></h2></div><p class="section-intro">Stop guessing between disconnected symptoms. Capture the system, its history, and the pieces most likely to explain the complaint — in one timestamped evidence folder.</p></div>
+      <div class="capability-grid">
+        <article class="cap-card cap-cyan"><div class="cap-top"><span>01 / INVENTORY</span><b>HOST</b></div><div class="cap-icon">▦</div><h3>Know the box.</h3><p>Windows build, hardware, memory, processors, services, drivers, software, and startup items.</p><div class="cap-foot">OS · CPU · RAM · DRIVERS</div></article>
+        <article class="cap-card cap-purple"><div class="cap-top"><span>02 / PERFORMANCE</span><b>SIGNAL</b></div><div class="cap-icon">⌁</div><h3>Find the drag.</h3><p>Boot history, top processes, counters, scheduled tasks, power plan, battery, and optional reports.</p><div class="cap-foot">BOOT · CPU · DISK · POWER</div></article>
+        <article class="cap-card cap-green"><div class="cap-top"><span>03 / STORAGE</span><b>HEALTH</b></div><div class="cap-icon">▤</div><h3>Check the media.</h3><p>Physical disks, volumes, SMART signals where available, free space, trim status, and system scans.</p><div class="cap-foot">DISKS · VOLUMES · SMART</div></article>
+        <article class="cap-card cap-pink"><div class="cap-top"><span>04 / EVENTS</span><b>HISTORY</b></div><div class="cap-icon">⌁</div><h3>Read the trail.</h3><p>Critical events, hardware faults, service timeouts, and boot performance from Windows logs.</p><div class="cap-foot">EVENTS · BOOT · CRASHES</div></article>
+        <article class="cap-card cap-orange"><div class="cap-top"><span>05 / CONNECTIVITY</span><b>NETWORK</b></div><div class="cap-icon">⌘</div><h3>Trace the path.</h3><p>Adapters, IP and DNS configuration, network settings, and current socket state.</p><div class="cap-foot">ADAPTERS · DNS · SOCKETS</div></article>
+        <article class="cap-card cap-red"><div class="cap-top"><span>06 / PRINTING</span><b>WORKFLOW</b></div><div class="cap-icon">▧</div><h3>Unstick the queue.</h3><p>Spooler state, printers, ports, drivers, jobs, configuration, and print-service events.</p><div class="cap-foot">SPOOLER · PORTS · JOBS</div></article>
+      </div>
+    </section>
+
+    <section class="screens-section" id="screens">
+      <div class="section shell">
+        <div class="section-head screens-head"><div><p class="eyebrow">02 / INSIDE THE FIELD KIT</p><h2>Eight views.<br><em>Real Windows signals.</em></h2></div><p class="section-intro">A visual tour of the collector’s actual output areas. The sample host names and readings in these previews are illustrative; the tool records what it finds on the target PC.</p></div>
+        <div class="screen-grid">
+          <article class="screen-card"><a class="screen-image" href="assets/previews/01-collection.svg" target="_blank"><img src="assets/previews/01-collection.svg" alt="Illustrative PowerShell collector session preview" loading="lazy"><span class="zoom-mark">↗</span></a><div class="screen-caption"><span>01 / LAUNCH</span><h3>Collection, not configuration</h3><p>Launch the collector from the USB. It gathers evidence without changing system settings by default.</p></div></article>
+          <article class="screen-card"><a class="screen-image" href="assets/previews/02-host-inventory.svg" target="_blank"><img src="assets/previews/02-host-inventory.svg" alt="Illustrative Windows host inventory report preview" loading="lazy"><span class="zoom-mark">↗</span></a><div class="screen-caption"><span>02 / HOST PROFILE</span><h3>Start with the hardware</h3><p>OS build, computer details, CPU, memory, updates, software, and startup entries.</p></div></article>
+          <article class="screen-card"><a class="screen-image" href="assets/previews/03-storage-health.svg" target="_blank"><img src="assets/previews/03-storage-health.svg" alt="Illustrative storage health and disk capacity report preview" loading="lazy"><span class="zoom-mark">↗</span></a><div class="screen-caption"><span>03 / STORAGE</span><h3>Check what holds the data</h3><p>Disk inventory, volumes, available reliability signals, capacity, and scan results.</p></div></article>
+          <article class="screen-card"><a class="screen-image" href="assets/previews/04-events-performance.svg" target="_blank"><img src="assets/previews/04-events-performance.svg" alt="Illustrative Windows event and boot performance report preview" loading="lazy"><span class="zoom-mark">↗</span></a><div class="screen-caption"><span>04 / EVENT TRAIL</span><h3>Put failures in sequence</h3><p>Event summaries and critical records help connect symptoms to a timeline.</p></div></article>
+          <article class="screen-card"><a class="screen-image" href="assets/previews/05-network-map.svg" target="_blank"><img src="assets/previews/05-network-map.svg" alt="Illustrative Windows network configuration report preview" loading="lazy"><span class="zoom-mark">↗</span></a><div class="screen-caption"><span>05 / NETWORK</span><h3>Map local connectivity</h3><p>Adapter state, IP and DNS configuration, and current connections in one place.</p></div></article>
+          <article class="screen-card"><a class="screen-image" href="assets/previews/06-printing.svg" target="_blank"><img src="assets/previews/06-printing.svg" alt="Illustrative Windows print spooler and printer inventory report preview" loading="lazy"><span class="zoom-mark">↗</span></a><div class="screen-caption"><span>06 / PRINTING</span><h3>See each hop to paper</h3><p>Spooler, printers, jobs, drivers, ports, and related Windows print events.</p></div></article>
+          <article class="screen-card"><a class="screen-image" href="assets/previews/07-security-posture.svg" target="_blank"><img src="assets/previews/07-security-posture.svg" alt="Illustrative Windows Security Center and antivirus evidence report preview" loading="lazy"><span class="zoom-mark">↗</span></a><div class="screen-caption"><span>07 / SECURITY EVIDENCE</span><h3>Inspect registered protection</h3><p>Security Center, Defender, and Avast service evidence — for review, not a protection guarantee.</p></div></article>
+          <article class="screen-card"><a class="screen-image" href="assets/previews/08-report-bundle.svg" target="_blank"><img src="assets/previews/08-report-bundle.svg" alt="Illustrative timestamped CyberWinDiagnostics report folder preview" loading="lazy"><span class="zoom-mark">↗</span></a><div class="screen-caption"><span>08 / EVIDENCE BUNDLE</span><h3>Keep the findings together</h3><p>Readable text and CSV outputs land in a timestamped folder on the toolkit drive.</p></div></article>
+        </div>
+        <p class="preview-note"><span>i</span> These are designed report previews, not captures from a live customer PC. Example names and values are fictional; the real collector saves raw output from Windows.</p>
+      </div>
+    </section>
+
+    <section class="workflow section" id="workflow">
+      <div class="section-head"><div><p class="eyebrow">03 / THE OPERATING MODEL</p><h2>Portable. <em>Deliberate.</em><br>Evidence first.</h2></div><p class="section-intro">Built for a technician’s workflow: understand the complaint, collect carefully, review the output, and get consent before any remediation.</p></div>
+      <div class="workflow-panel">
+        <div class="workflow-steps"><article><span>01</span><div><h3>Ask and observe</h3><p>Record symptoms and context before changing anything.</p></div></article><article><span>02</span><div><h3>Run the collector</h3><p>Use the included launcher. Admin elevation supports deeper Windows inventory.</p></div></article><article><span>03</span><div><h3>Read the evidence</h3><p>Review the timestamped report, then map findings back to the complaint.</p></div></article><article><span>04</span><div><h3>Choose the next move</h3><p>Remediation is separate and explicit. Back up first; make one change at a time.</p></div></article></div>
+        <aside class="workflow-terminal"><div class="mini-titlebar"><span>REPORT / _SUMMARY.TXT</span><div><i></i><i></i><i></i></div></div><div class="summary-file"><p><span>HOST</span> FIELD-WS-042</p><p><span>WINDOWS</span> 11 Pro / Build 26100</p><p><span>COLLECTION</span> 2026-09-28 09:14</p><p><span>OUTPUT</span> Reports\FIELD-WS-042-20260928-091403</p><div class="summary-divider"></div><p class="summary-result"><b>COLLECTION COMPLETE</b><small>Review all findings before taking action.</small></p></div><div class="mini-status"><i></i> LOCAL REPORT / NO CLOUD UPLOAD</div></aside>
+      </div>
+      <div class="safety-strip"><span class="safety-icon">⌑</span><div><strong>Safe by default. Explicit by design.</strong><p>The main collector is read-only unless optional integrity scans are requested. The separate printer-fix script can alter settings; inspect its help and use <code>-WhatIf</code> where supported.</p></div><a href="https://github.com/cybercore-tech/CyberWinDiagnostics/blob/main/TOOL-SOURCES.md">Tools &amp; licensing ↗</a></div>
+    </section>
+
+    <section class="cta-section"><div class="cta-wallpaper" aria-hidden="true"></div><div class="cta-inner"><div class="eyebrow"><span class="live-dot"></span> READY FOR THE NEXT FIELD CALL</div><h2>Bring clarity<br>to the <em>repair bench.</em></h2><p>Portable Windows diagnostics from Cybercore Tech. Run locally, read carefully, work with consent.</p><div class="hero-actions"><a class="button button-primary" href="https://github.com/cybercore-tech/CyberWinDiagnostics/archive/refs/heads/main.zip">Download source ZIP <span>↓</span></a><a class="button button-secondary" href="https://github.com/cybercore-tech/CyberWinDiagnostics">Open repository <span>↗</span></a></div></div><div class="cta-coordinates">CYBERCORE TECH<br>FIELD SYSTEMS / 2026</div></section>
+  </main>
+  <footer class="footer"><a class="footer-brand" href="#top"><span class="brand-mark"><b></b><b></b><b></b><b></b></span> CYBERCORE TECH</a><span>CYBERWINDIAGNOSTICS / WINDOWS FIELD TOOLKIT</span><span>BUILT TO INSPECT. USED WITH CONSENT.</span></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -3,6 +3,8 @@
 > Portable Windows 10 diagnostic runbook and toolkit.
 > Boot it, plug it, run it, walk away with a report.
 
+**Project site:** [CyberWinDiagnostics for Windows](https://cybercore-tech.github.io/CyberWinDiagnostics/) · [Source repository](https://github.com/cybercore-tech/CyberWinDiagnostics)
+
 > **Personal USB build status (2026-09-28):** the USB includes portable Notepad++,
 > 7-Zip Extra, CrystalDiskInfo, and a local Sysinternals Suite copy. It also
 > has a fresh Microsoft Safety Scanner with a signature-checked refresh button.
