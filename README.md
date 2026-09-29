@@ -3,13 +3,14 @@
 > Portable Windows 10 diagnostic runbook and toolkit.
 > Boot it, plug it, run it, walk away with a report.
 
-> **USB build status (2026-09-28):** the USB includes portable Notepad++,
+> **Personal USB build status (2026-09-28):** the USB includes portable Notepad++,
 > 7-Zip Extra, CrystalDiskInfo, and a local Sysinternals Suite copy. It also
 > has a fresh Microsoft Safety Scanner with a signature-checked refresh button.
-> The shareable source ZIP
-> excludes third-party binaries. See [TOOL-SOURCES.md](TOOL-SOURCES.md) for
-> official sources and [Tools/Bundle-INFO.md](Tools/Bundle-INFO.md) for exact
-> versions, hashes, and use restrictions. The collector uses Windows built-ins.
+> These third-party binaries are only on the personal USB, not in the Git
+> repository or shareable ZIP. Do not distribute the USB or its binaries.
+> See [TOOL-SOURCES.md](TOOL-SOURCES.md) for official sources and
+> [Tools/Bundle-INFO.md](Tools/Bundle-INFO.md) for exact versions, hashes, and
+> use restrictions. The collector uses Windows built-ins.
 
 A field manual for answering four questions on a machine you don't own:
 

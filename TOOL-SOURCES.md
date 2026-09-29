@@ -1,10 +1,11 @@
 # Tool downloads and licensing
 
-The collector and runbook work without third-party applications. The portable
-Notepad++, 7-Zip Extra, and CrystalDiskInfo packages are bundled with their
-open-source licenses. A local Sysinternals Suite copy is on the personal USB only; it is
-excluded from the shareable ZIP because Microsoft's terms do not permit
-redistribution. See `Tools/Bundle-INFO.md` for versions and hashes.
+The collector and runbook work without third-party applications. The personal
+USB has portable Notepad++, 7-Zip Extra, and CrystalDiskInfo packages with
+their license materials. These binaries are excluded from the repository and
+shareable ZIP. A local Sysinternals Suite copy is also on the personal USB;
+Microsoft's terms do not permit redistribution. See `Tools/Bundle-INFO.md` for
+the USB inventory, versions, hashes, and use restrictions.
 
 | Tool | Official source | Notes |
 | --- | --- | --- |
@@ -16,11 +17,13 @@ redistribution. See `Tools/Bundle-INFO.md` for versions and hashes.
 | Notepad++ | <https://github.com/notepad-plus-plus/notepad-plus-plus/releases> | Official project release page; portable ZIP/7z builds are available. Verify the published checksum. |
 | smartmontools | <https://www.smartmontools.org/wiki/Download> | GPL project; use the official Windows build and retain its license materials. |
 
-No third-party binaries are embedded in the distributable ZIP. The personal
-USB has the local Sysinternals copy described above. Before sharing the USB or
-archive, remove any binaries whose terms do not allow redistribution. The USB
-is exFAT and supports cross-platform file exchange; the PowerShell collector
-and Windows executables run only on Windows.
+No third-party binaries are embedded in the repository or distributable ZIP.
+The personal USB contains local third-party binaries under their respective
+terms. Do not hand this USB to another person or copy its binaries into a
+shared archive; distribute links to vendor download pages instead. For a
+shareable build, obtain and review the terms for every utility before adding
+it. The USB is exFAT and supports cross-platform file exchange; the PowerShell
+collector and Windows executables run only on Windows.
 
 ## Runtime and validation
 
