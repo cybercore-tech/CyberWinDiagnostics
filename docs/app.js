@@ -135,7 +135,7 @@ $('.main-nav').addEventListener('click', (event) => {
   }
 });
 
-fetch('data/themes.json')
+fetch(new URL('data/themes.json', document.currentScript.src))
   .then((response) => {
     if (!response.ok) throw new Error(`Theme registry unavailable (${response.status})`);
     return response.json();

@@ -70,4 +70,12 @@ for anchor in re.findall(r'href="#([^"]+)"', (SITE / "index.html").read_text(enc
     if anchor not in page.ids:
         fail(f"in-page link has no matching target: #{anchor}")
 
-print("PASS: 72 unique themes, valid palettes, 8 screen previews, accessible image alt text, and local links")
+source_html = (SITE / "index.html").read_text(encoding="utf-8")
+legacy_html = source_html.replace('href="assets/', 'href="docs/assets/')
+legacy_html = legacy_html.replace('src="assets/', 'src="docs/assets/')
+legacy_html = legacy_html.replace('href="styles.css"', 'href="docs/styles.css"')
+legacy_html = legacy_html.replace('src="app.js"', 'src="docs/app.js"')
+if (ROOT / "index.html").read_text(encoding="utf-8") != legacy_html:
+    fail("root Pages compatibility index is stale; regenerate it from docs/index.html")
+
+print("PASS: 72 themes, 8 previews, accessible/local assets, and root Pages compatibility copy")
