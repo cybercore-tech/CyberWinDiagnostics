@@ -45,6 +45,7 @@ jobs:
         run: |
           $ErrorActionPreference = 'Stop'
           $required = @(
+            'LICENSE',
             'CyberWinDiag.cmd',
             'Scripts/Invoke-CyberWinDiag.ps1',
             'Scripts/Fix-PrintSpooler.ps1',

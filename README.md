@@ -1850,11 +1850,12 @@ mistake).
 
 ## License and attribution
 
-This runbook is yours. The third-party tools it references are each under their
-own license — Sysinternals under the Microsoft Software License Terms, NirSoft
-under its own freeware terms, and so on. Redistributing a stick with all of them
-on it for commercial service work isn't automatically permitted; check each
-vendor's terms if you're building this for a business rather than personal use.
+The CyberWinDiagnostics scripts and documentation in this repository are
+licensed under the MIT License; see [LICENSE](LICENSE). That license does not
+cover third-party utilities placed on a personal USB. Those remain under their
+respective terms: for example, Sysinternals cannot be redistributed, and
+Microsoft Safety Scanner expires ten days after download. Review
+[TOOL-SOURCES.md](TOOL-SOURCES.md) before adding or sharing any vendor tools.
 
 Nothing in this document requires you to modify a system to gather evidence.
 Every command in Phases 0-8 is read-only unless explicitly flagged otherwise.
